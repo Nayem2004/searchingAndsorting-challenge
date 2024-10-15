@@ -10,24 +10,24 @@ def main():
         for row in csv_reader:
             students.append(row)
     
-    # Display the first few records
+    # Displays the first few records.
     print("First few records of the dataset:")
     for student in students[:5]:
         print(student)
 
-    # Sort by Math Score using selection sort (descending)
+    # Sorts by Math Score using selection sort (descending).
     sorted_math = selection_sort_desc(students[:], key='Math Score')
     print("\nTop records sorted by Math Score (descending):")
     for record in sorted_math[:5]:
         print(record)
 
-    # Sort by Reading Score using insertion sort (ascending)
+    # Sorts by Reading Score using insertion sort (ascending).
     sorted_reading = insertion_sort_asc(students[:], key='Reading Score')
     print("\nTop records sorted by Reading Score (ascending):")
     for record in sorted_reading[:5]:
         print(record)
 
-    # Linear search by Student ID
+    # Linear search by Student ID.
     student_id = input("\nEnter Student ID to find their scores: ")
     student_record = linear_search_by_id(students, student_id)
     if student_record:
@@ -36,7 +36,7 @@ def main():
     else:
         print(f"\nNo record found for Student ID {student_id}.")
 
-    # Binary search by Reading Score
+    # Binary search by Reading Score.
     target_score = float(input("\nEnter Reading Score to search for a student: "))
     result = binary_search_by_reading_score(sorted_reading, target_score)
     if result:
@@ -45,10 +45,10 @@ def main():
     else:
         print(f"\nNo student found with Reading Score {target_score}.")
 
-    # Calculate and display average scores per grade
+    # Calculates and displays average scores per grade.
     calculate_average_scores(students)
 
-    # Calculate and display pass rates
+    # Calculates and displays pass rates.
     calculate_pass_rates(students)
 
 
